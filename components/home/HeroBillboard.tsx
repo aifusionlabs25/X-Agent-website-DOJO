@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Info, Square } from 'lucide-react';
+import { Play, Info, Square, ArrowRight } from 'lucide-react';
 import GhostlyBackground from './GhostlyBackground';
 import AnamPlayer from '../AnamPlayer';
 
@@ -33,7 +33,7 @@ export default function HeroBillboard() {
                         >
                             <Image
                                 src="/agents/thumbnails/Dani landing page hero 1.png"
-                                alt="Dani – X Agent"
+                                alt="Dani – X Agent Director"
                                 fill
                                 priority
                                 className="object-cover object-top"
@@ -50,7 +50,7 @@ export default function HeroBillboard() {
                             className="fixed inset-0 z-[100] bg-black"
                         >
                             <AnamPlayer
-                                personaId="61f0fd3e-7937-472a-958d-cdba76b33bf1"
+                                personaId="972e0055-4a8a-4ba5-8b77-39bc0dfb6a1c"
                                 onClose={() => setIsPlaying(false)}
                             />
                             {/* Overlay End Session Button strictly on the video */}
@@ -67,7 +67,7 @@ export default function HeroBillboard() {
                     )}
                 </AnimatePresence>
 
-                {/* Bottom dark gradient — 100% black at the very bottom edge for a smooth transition, but rapidly fading to keep her jacket bright */}
+                {/* Bottom dark gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 from-0% via-zinc-950/20 via-[25%] to-transparent to-[100%]" />
                 {/* Left vignette */}
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/75 via-zinc-950/10 to-transparent" />
@@ -83,15 +83,17 @@ export default function HeroBillboard() {
                                 exit={{ opacity: 0, y: 10 }}
                                 transition={{ duration: 0.4 }}
                             >
-                                {/* Title */}
-                                <h1 className="text-white text-5xl sm:text-7xl md:text-9xl font-black tracking-widest mb-2 md:mb-4 drop-shadow-lg">
-                                    DANI
+                                {/* Updated Headline */}
+                                <h1 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-3 md:mb-5 drop-shadow-lg leading-[1.1]">
+                                    Deploy Lifelike AI Agents for Smarter Sales & Ops
                                 </h1>
 
-                                {/* Subtitle */}
-                                <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 md:mb-8 max-w-[90%] md:max-w-md">
-                                    X Agent. Lifelike. Real-time. Always on.<br />
-                                    Meet Dani, our X Agent Director here at AI Fusion Labs, she never misses a beat.
+                                {/* Updated Subtitle */}
+                                <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 md:mb-8 max-w-[90%] md:max-w-lg">
+                                    Zero hallucinations. Easy integrations. Real-time voice, gestures & lip-sync.
+                                    <span className="block mt-2 text-zinc-400 text-xs sm:text-sm">
+                                        Built by a founder with deep experience automating lead follow-ups and CRM chaos for SMBs.
+                                    </span>
                                 </p>
                             </motion.div>
                         )}
@@ -112,16 +114,28 @@ export default function HeroBillboard() {
                         {/* More Info → agent detail sub-page */}
                         <AnimatePresence>
                             {!isPlaying && (
-                                <motion.a
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    href="/agents/dani"
-                                    className="flex items-center gap-2 bg-zinc-700/70 hover:bg-zinc-600/80 text-white font-semibold px-7 py-3 rounded-md text-sm transition-colors backdrop-blur-sm"
-                                >
-                                    <Info size={18} />
-                                    More Info
-                                </motion.a>
+                                <>
+                                    <motion.a
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        href="/agents/dani"
+                                        className="flex items-center gap-2 bg-zinc-700/70 hover:bg-zinc-600/80 text-white font-semibold px-7 py-3 rounded-md text-sm transition-colors backdrop-blur-sm"
+                                    >
+                                        <Info size={18} />
+                                        More Info
+                                    </motion.a>
+                                    <motion.a
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        href="#beta-signup"
+                                        className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-7 py-3 rounded-md text-sm transition-colors"
+                                    >
+                                        Join Beta Pilot
+                                        <ArrowRight size={16} />
+                                    </motion.a>
+                                </>
                             )}
                         </AnimatePresence>
                     </div>
