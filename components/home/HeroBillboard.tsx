@@ -112,7 +112,7 @@ export default function HeroBillboard() {
                             className="fixed inset-0 z-[100] bg-black"
                         >
                             <AnamPlayer
-                                personaId="972e0055-4a8a-4ba5-8b77-39bc0dfb6a1c"
+                                personaId="61f0fd3e-7937-472a-958d-cdba76b33bf1"
                                 onClose={() => setIsPlaying(false)}
                             />
                             {/* Overlay End Session Button strictly on the video */}
