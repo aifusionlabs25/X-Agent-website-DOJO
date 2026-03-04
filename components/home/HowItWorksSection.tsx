@@ -18,7 +18,7 @@ const steps = [
         icon: Plug,
         step: '03',
         title: 'Integrate Seamlessly',
-        desc: 'Deploy via a single iframe, SDK snippet, or connect through webhooks to Zapier, Salesforce, HubSpot, and more.',
+        desc: 'Deploy via a single iframe, SDK snippet, or connect through webhooks and API to your existing CRM and sales tools.',
     },
     {
         icon: Rocket,
@@ -53,7 +53,7 @@ export default function HowItWorksSection() {
                 <div className="text-center mb-16">
                     <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">How It Works</p>
                     <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
-                        From Pain Point to Production in Days, Not Months
+                        From Pain Point to Production in Weeks, Not Months
                     </h2>
                     <p className="text-zinc-400 text-base max-w-2xl mx-auto">
                         We handle the complexity. You get a battle-ready AI agent deployed on your website, embedded in your CRM, or fielding calls—fast.

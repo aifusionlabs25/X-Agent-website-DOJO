@@ -19,7 +19,7 @@ const specs = [
     {
         icon: Globe,
         title: 'Deploy Anywhere',
-        desc: 'Embed on any website, app, or CRM via a single iframe or SDK snippet. Integrates with Zapier, Salesforce, HubSpot, Resend & more.',
+        desc: 'Embed on any website, app, or CRM via a single iframe or SDK snippet. Connect through webhooks and API to your existing tools.',
     },
 ];
 

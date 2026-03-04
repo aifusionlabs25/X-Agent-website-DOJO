@@ -4,50 +4,56 @@ const tiers = [
     {
         name: 'Starter',
         pilot: '$500',
-        monthly: '$100',
+        monthly: '$250',
         minutes: '100',
-        description: 'Perfect for simple automations and Zapier-based workflows.',
+        description: 'Ideal for teams exploring AI-assisted workflows and basic automations.',
         features: [
             'Single X Agent persona',
-            'Zapier integration',
-            'Lead follow-up automation',
+            'Email-based lead follow-up',
+            'Session transcripts & summaries',
             'Email notifications & alerts',
             '100 action minutes/mo',
         ],
+        cta: 'Get Started',
         popular: false,
+        isEnterprise: false,
     },
     {
         name: 'Pro',
         pilot: '$1,000',
-        monthly: '$250',
+        monthly: '$500',
         minutes: '500',
-        description: 'For growing teams that need Salesforce, CRM sync, and custom scraping.',
+        description: 'For teams ready to integrate AI agents into their existing sales and CRM stack.',
         features: [
             'Up to 3 X Agent personas',
-            'Salesforce + HubSpot integration',
-            'Custom data scraping pipelines',
+            'CRM integration (Salesforce)',
+            'Custom data pipelines',
             'Lead scoring & intelligence emails',
             'Transcript archival & analytics',
             '500 action minutes/mo',
         ],
+        cta: 'Get Started',
         popular: true,
+        isEnterprise: false,
     },
     {
         name: 'Enterprise',
-        pilot: '$2,000',
-        monthly: '$500',
-        minutes: 'Unlimited',
-        description: 'Full front-end tie-in with dedicated engineering and custom integrations.',
+        pilot: '',
+        monthly: '',
+        minutes: '',
+        description: 'Full-scale deployment with dedicated engineering, custom integrations, and priority support.',
         features: [
-            'Unlimited X Agent personas',
+            'Multiple X Agent personas',
             'Full API & webhook access',
             'White-label deployment',
             'Custom Knowledge Bank curation',
             'Dedicated onboarding & support',
             'Priority engineering queue',
-            'Unlimited action minutes',
+            'Custom minute allocation',
         ],
+        cta: 'Contact Us',
         popular: false,
+        isEnterprise: true,
     },
 ];
 
@@ -58,10 +64,10 @@ export default function PricingSection() {
                 <div className="text-center mb-16">
                     <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">Pricing</p>
                     <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
-                        Simple, Transparent Pricing
+                        Straightforward Pricing
                     </h2>
                     <p className="text-zinc-400 text-base max-w-2xl mx-auto">
-                        Start with a one-time pilot build, then scale with a predictable monthly subscription. No surprise fees.
+                        Start with a one-time pilot build, then scale with a monthly subscription. Reach out if you need something custom.
                     </p>
                 </div>
 
@@ -83,11 +89,20 @@ export default function PricingSection() {
                             <p className="text-zinc-500 text-sm mb-6">{tier.description}</p>
 
                             <div className="mb-6">
-                                <div className="flex items-baseline gap-1 mb-1">
-                                    <span className="text-white text-4xl font-black">{tier.monthly}</span>
-                                    <span className="text-zinc-500 text-sm">/mo</span>
-                                </div>
-                                <p className="text-zinc-500 text-sm">+ {tier.pilot} one-time pilot build</p>
+                                {tier.isEnterprise ? (
+                                    <>
+                                        <span className="text-white text-3xl font-black">Let&apos;s Talk</span>
+                                        <p className="text-zinc-500 text-sm mt-1">Custom pricing based on scope</p>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="flex items-baseline gap-1 mb-1">
+                                            <span className="text-white text-4xl font-black">{tier.monthly}</span>
+                                            <span className="text-zinc-500 text-sm">/mo</span>
+                                        </div>
+                                        <p className="text-zinc-500 text-sm">+ {tier.pilot} one-time pilot build</p>
+                                    </>
+                                )}
                             </div>
 
                             <ul className="space-y-3 mb-8 flex-grow">
@@ -106,15 +121,15 @@ export default function PricingSection() {
                                     : 'bg-zinc-800 hover:bg-zinc-700 text-white'
                                     }`}
                             >
-                                Get Started
+                                {tier.cta}
                             </a>
                         </div>
                     ))}
                 </div>
 
                 <p className="text-center text-zinc-600 text-sm mt-8">
-                    Overages billed at $0.05–$0.10/min depending on tier. Need a custom quote?{' '}
-                    <a href="#beta-signup" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">Contact us</a>.
+                    Need something outside of these tiers?{' '}
+                    <a href="#beta-signup" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">Let&apos;s chat</a>.
                 </p>
             </div>
         </section>

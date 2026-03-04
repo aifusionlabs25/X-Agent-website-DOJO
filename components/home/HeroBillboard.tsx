@@ -67,10 +67,10 @@ export default function HeroBillboard() {
                     )}
                 </AnimatePresence>
 
-                {/* Bottom dark gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 from-0% via-zinc-950/20 via-[25%] to-transparent to-[100%]" />
-                {/* Left vignette */}
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/75 via-zinc-950/10 to-transparent" />
+                {/* Bottom dark gradient — heavier to ensure text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 from-0% via-zinc-950/40 via-[30%] to-transparent to-[100%]" />
+                {/* Left vignette — stronger for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/40 via-[45%] to-transparent" />
 
                 {/* Content layer */}
                 <div className="absolute bottom-0 left-0 p-6 md:p-16 max-w-2xl w-full">

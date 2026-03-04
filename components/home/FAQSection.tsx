@@ -14,11 +14,11 @@ const faqs = [
     },
     {
         question: 'What integrations are supported?',
-        answer: 'X Agents integrate with Zapier, Salesforce, HubSpot, Resend, OpenAI, Gemini, Grok, and more via webhooks and API. You can also embed agents on any website using a single iframe or our JavaScript SDK.',
+        answer: 'X Agents connect to your existing tools via webhooks and API — including popular CRMs, email platforms, and custom integrations. You can also embed agents on any website using a single iframe or our JavaScript SDK.',
     },
     {
         question: 'How fast can I deploy an agent?',
-        answer: 'Most pilot builds are completed within 5–10 business days from kickoff. Simple Zapier-based workflows can be live in as little as 48 hours. Enterprise integrations with custom training typically take 2–3 weeks.',
+        answer: 'Most pilot builds are completed within 2–4 weeks from kickoff, depending on complexity. Simpler workflows move faster, while enterprise integrations with custom training may take a bit longer.',
     },
     {
         question: 'What\'s the pilot process?',
