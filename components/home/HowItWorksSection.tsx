@@ -93,15 +93,15 @@ export default function HowItWorksSection() {
                             key={cs.title}
                             className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-indigo-500/30 transition-colors group"
                         >
-                            <div className="relative w-full aspect-[16/10] bg-zinc-800">
+                            <a href={cs.image} target="_blank" rel="noopener noreferrer" className="block relative w-full aspect-[4/3] bg-zinc-800 cursor-zoom-in">
                                 <Image
                                     src={cs.image}
                                     alt={cs.title}
                                     fill
-                                    className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                    className="object-contain p-2 group-hover:scale-[1.02] transition-transform duration-300"
                                     sizes="(max-width: 768px) 100vw, 33vw"
                                 />
-                            </div>
+                            </a>
                             <div className="p-5">
                                 <h4 className="text-white font-semibold text-sm mb-1.5">{cs.title}</h4>
                                 <p className="text-zinc-400 text-sm leading-relaxed">{cs.description}</p>

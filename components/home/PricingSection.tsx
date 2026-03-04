@@ -25,7 +25,7 @@ const tiers = [
         minutes: '500',
         description: 'For teams ready to integrate AI agents into their existing sales and CRM stack.',
         features: [
-            'Up to 3 X Agent personas',
+            'Single X Agent persona',
             'CRM integration (Salesforce)',
             'Custom data pipelines',
             'Lead scoring & intelligence emails',
