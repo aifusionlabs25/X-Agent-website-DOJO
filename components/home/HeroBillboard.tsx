@@ -39,6 +39,68 @@ export default function HeroBillboard() {
                                 className="object-cover object-top"
                                 sizes="100vw"
                             />
+
+                            {/* Bottom dark gradient — heavier to ensure text contrast */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 from-0% via-zinc-950/40 via-[30%] to-transparent to-[100%]" />
+                            {/* Left vignette — stronger for text readability */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/40 via-[45%] to-transparent" />
+
+                            {/* Content layer */}
+                            <div className="absolute bottom-0 left-0 p-6 md:p-16 max-w-2xl w-full">
+                                <motion.p
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                    className="text-indigo-400 font-bold tracking-widest text-sm mb-3 uppercase flex items-center gap-2"
+                                >
+                                    <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+                                    Meet Dani — X Agent Director
+                                </motion.p>
+                                <motion.h1
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.3 }}
+                                    className="text-white text-4xl sm:text-5xl md:text-6xl font-black mb-6 leading-[1.1]"
+                                >
+                                    Deploy Lifelike AI Agents for{' '}
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
+                                        Smarter Sales & Ops
+                                    </span>
+                                </motion.h1>
+                                <motion.p
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4 }}
+                                    className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl"
+                                >
+                                    X Agents are trained strictly on your Knowledge Bank — meaning zero hallucinations, ever. From instant lead qualification to handling tier-1 service tickets, your visitors feel like they&apos;re speaking face-to-face with a real person, hands-free. Built by a founder with deep experience in automating lead follow-ups and CRM chaos for SMBs. Connect to your tools via webhook and embed anywhere.
+                                    <br /><br />
+                                    <span className="font-semibold text-indigo-300">Clients see 50–70% ops efficiency gains →</span>
+                                </motion.p>
+
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <motion.button
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ delay: 0.5 }}
+                                        onClick={() => setIsPlaying(true)}
+                                        className="flex items-center justify-center gap-2 bg-white text-black hover:bg-zinc-200 font-bold px-8 py-3.5 rounded-md transition-colors"
+                                    >
+                                        <Play size={18} className="fill-black" />
+                                        Start Conversation
+                                    </motion.button>
+                                    <motion.a
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ delay: 0.6 }}
+                                        href="#beta-signup"
+                                        className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-3.5 rounded-md transition-colors"
+                                    >
+                                        Join Beta Pilot
+                                        <ArrowRight size={16} />
+                                    </motion.a>
+                                </div>
+                            </div>
                         </motion.div>
                     ) : (
                         <motion.div
@@ -59,91 +121,13 @@ export default function HeroBillboard() {
                                     onClick={() => setIsPlaying(false)}
                                     className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold px-7 py-3 rounded-md text-sm transition-colors shadow-lg shadow-red-900/50"
                                 >
-                                    <Square size={18} fill="white" />
+                                    <Square size={16} className="fill-white" />
                                     End Session
                                 </button>
                             </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
-
-                {/* Bottom dark gradient — heavier to ensure text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 from-0% via-zinc-950/40 via-[30%] to-transparent to-[100%]" />
-                {/* Left vignette — stronger for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/40 via-[45%] to-transparent" />
-
-                {/* Content layer */}
-                <div className="absolute bottom-0 left-0 p-6 md:p-16 max-w-2xl w-full">
-
-                    <AnimatePresence>
-                        {!isPlaying && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 10 }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                {/* Updated Headline */}
-                                <h1 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-3 md:mb-5 drop-shadow-lg leading-[1.1]">
-                                    Deploy Lifelike AI Agents for Smarter Sales & Ops
-                                </h1>
-
-                                {/* Updated Subtitle */}
-                                <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed mb-2 md:mb-4 max-w-[90%] md:max-w-lg">
-                                    Zero hallucinations. Easy integrations. Real-time voice, gestures & lip-sync —
-                                    your visitors feel like they&apos;re speaking face-to-face with a real person, hands-free.
-                                    <span className="block mt-2 text-zinc-400 text-xs sm:text-sm">
-                                        Built by a founder with deep experience automating lead follow-ups and CRM chaos for SMBs.
-                                    </span>
-                                </p>
-                                <p className="text-indigo-400 text-xs sm:text-sm font-semibold mb-4 md:mb-8 tracking-wide">
-                                    Clients see 50–70% ops efficiency gains →
-                                </p>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-3 mt-2 md:mt-4">
-                        {/* Play Demo → launches cinematic Anam session */}
-                        {!isPlaying && (
-                            <button
-                                onClick={() => setIsPlaying(true)}
-                                className="flex items-center gap-2 bg-white hover:bg-zinc-100 text-black font-bold px-7 py-3 rounded-md text-sm transition-colors"
-                            >
-                                <Play size={18} fill="black" />
-                                Start Conversation
-                            </button>
-                        )}
-                        {/* More Info → agent detail sub-page */}
-                        <AnimatePresence>
-                            {!isPlaying && (
-                                <>
-                                    <motion.a
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        href="/agents/dani"
-                                        className="flex items-center gap-2 bg-zinc-700/70 hover:bg-zinc-600/80 text-white font-semibold px-7 py-3 rounded-md text-sm transition-colors backdrop-blur-sm"
-                                    >
-                                        <Info size={18} />
-                                        More Info
-                                    </motion.a>
-                                    <motion.a
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        href="#beta-signup"
-                                        className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-7 py-3 rounded-md text-sm transition-colors"
-                                    >
-                                        Join Beta Pilot
-                                        <ArrowRight size={16} />
-                                    </motion.a>
-                                </>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                </div>
             </motion.div>
         </section>
     );
