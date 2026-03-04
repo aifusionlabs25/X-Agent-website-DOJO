@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'X Agents by AI Fusion Labs — Autonomous AI for SMB Automation',
-  description: 'Deploy lifelike AI agents for smarter sales & ops. Zero hallucinations, easy integrations, real-time voice & video. Join the beta pilot today.',
+  description: 'X Agents: Lifelike AI for sales/ops automation. Beta pilots for SMBs—join now.',
   openGraph: {
     title: 'X Agents by AI Fusion Labs — Autonomous AI for SMB Automation',
     description: 'Deploy lifelike AI agents for smarter sales & ops. Zero hallucinations, easy integrations, real-time voice & video.',

@@ -51,8 +51,9 @@ export default function BetaSignupSection() {
 
                 {status === 'success' ? (
                     <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-10 text-center">
-                        <p className="text-emerald-400 text-xl font-semibold mb-2">Thanks! 🎉</p>
-                        <p className="text-zinc-300">We&apos;ll reach out for a quick chat to understand your workflow and build your custom agent.</p>
+                        <p className="text-emerald-400 text-xl font-semibold mb-2">You&apos;re In! 🎉</p>
+                        <p className="text-zinc-300 mb-3">Thanks for signing up for the Beta Pilot.</p>
+                        <p className="text-zinc-400 text-sm">Check your email for next steps — we&apos;ll reach out within 24 hours to schedule a quick discovery call and start building your custom agent.</p>
                     </div>
                 ) : (
                     <form ref={formRef} onSubmit={handleSubmit} className="bg-zinc-900 border border-zinc-800 rounded-xl p-8 space-y-5">

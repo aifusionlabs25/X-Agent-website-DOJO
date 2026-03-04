@@ -89,11 +89,15 @@ export default function HeroBillboard() {
                                 </h1>
 
                                 {/* Updated Subtitle */}
-                                <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 md:mb-8 max-w-[90%] md:max-w-lg">
-                                    Zero hallucinations. Easy integrations. Real-time voice, gestures & lip-sync.
+                                <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed mb-2 md:mb-4 max-w-[90%] md:max-w-lg">
+                                    Zero hallucinations. Easy integrations. Real-time voice, gestures & lip-sync —
+                                    your visitors feel like they&apos;re speaking face-to-face with a real person, hands-free.
                                     <span className="block mt-2 text-zinc-400 text-xs sm:text-sm">
                                         Built by a founder with deep experience automating lead follow-ups and CRM chaos for SMBs.
                                     </span>
+                                </p>
+                                <p className="text-indigo-400 text-xs sm:text-sm font-semibold mb-4 md:mb-8 tracking-wide">
+                                    Clients see 50–70% ops efficiency gains →
                                 </p>
                             </motion.div>
                         )}

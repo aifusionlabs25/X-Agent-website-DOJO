@@ -4,22 +4,22 @@ const specs = [
     {
         icon: Zap,
         title: 'Neural Architecture',
-        desc: 'Advanced real-time synthesis – lifelike lip-sync, natural voice, and expressive gestures in live conversations.',
+        desc: 'Advanced real-time synthesis — lifelike lip-sync, natural voice, and expressive gestures. Visitors subconsciously feel they\'re talking to a real person, building instant trust.',
     },
     {
         icon: Brain,
         title: 'Knowledge-First Intelligence',
-        desc: 'Every agent is bound to an approved Knowledge Bank. No hallucinations, no guessing.',
+        desc: 'Every agent is bound to an approved Knowledge Bank. No hallucinations, no guessing — only verified, on-brand responses.',
     },
     {
         icon: TrendingUp,
-        title: 'Proven Conversion Gains',
-        desc: 'Our X Agents consistently deliver measurable performance improvements relative to traditional human-led outreach and support roles.',
+        title: '50–70% Efficiency Gains',
+        desc: 'X Agents consistently deliver measurable performance improvements — automating follow-ups, qualifying leads, and routing support 24/7.',
     },
     {
         icon: Globe,
         title: 'Deploy Anywhere',
-        desc: 'Embed on any website, app, or CRM via a single iframe or SDK snippet.',
+        desc: 'Embed on any website, app, or CRM via a single iframe or SDK snippet. Integrates with Zapier, Salesforce, HubSpot, Resend & more.',
     },
 ];
 

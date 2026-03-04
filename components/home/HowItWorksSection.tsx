@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Lightbulb, Wrench, Plug, Rocket } from 'lucide-react';
 
 const steps = [
@@ -27,6 +28,24 @@ const steps = [
     },
 ];
 
+const caseStudies = [
+    {
+        title: 'AI Lead Automation',
+        description: 'Inbound form → AI agent qualifies & follows up → CRM updated automatically.',
+        image: '/diagrams/flow-lead-automation.png',
+    },
+    {
+        title: 'CRM Pipeline Optimization',
+        description: 'Before: scattered leads and missed follow-ups. After: structured pipeline with zero drop-off.',
+        image: '/diagrams/flow-crm-optimization.png',
+    },
+    {
+        title: 'Lifelike Voice Engagement',
+        description: 'Visitor lands → AI greets with live video → hands-free conversation → lead captured & routed.',
+        image: '/diagrams/flow-voice-engagement.png',
+    },
+];
+
 export default function HowItWorksSection() {
     return (
         <section id="how-it-works" className="bg-zinc-950 py-24 px-8">
@@ -41,7 +60,8 @@ export default function HowItWorksSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Step Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
                     {steps.map(({ icon: Icon, step, title, desc }) => (
                         <div
                             key={step}
@@ -55,6 +75,37 @@ export default function HowItWorksSection() {
                             </div>
                             <h3 className="text-white font-semibold text-sm mb-2">{title}</h3>
                             <p className="text-zinc-400 text-sm leading-relaxed">{desc}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Visual Case Studies */}
+                <div className="text-center mb-12">
+                    <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">Use Cases</p>
+                    <h3 className="text-white text-2xl md:text-3xl font-bold mb-4">
+                        See It in Action
+                    </h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {caseStudies.map((cs) => (
+                        <div
+                            key={cs.title}
+                            className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-indigo-500/30 transition-colors group"
+                        >
+                            <div className="relative w-full aspect-[16/10] bg-zinc-800">
+                                <Image
+                                    src={cs.image}
+                                    alt={cs.title}
+                                    fill
+                                    className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                />
+                            </div>
+                            <div className="p-5">
+                                <h4 className="text-white font-semibold text-sm mb-1.5">{cs.title}</h4>
+                                <p className="text-zinc-400 text-sm leading-relaxed">{cs.description}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
