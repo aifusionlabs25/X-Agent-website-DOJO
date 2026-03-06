@@ -33,7 +33,7 @@ export default function SiteFooter() {
                             <a href="#" className="text-zinc-500 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                 LinkedIn
                             </a>
-                            <a href="#" className="text-zinc-500 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                            <a href="https://x.com/AI_FusionLab" className="text-zinc-500 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                 X (Twitter)
                             </a>
                         </nav>
