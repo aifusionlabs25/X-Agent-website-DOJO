@@ -15,7 +15,7 @@ export function useAnamQaSession({ personaId }: UseAnamQaSessionProps) {
     const [client, setClient] = useState<AnamClient | null>(null);
     const [connectionState, setConnectionState] = useState<'idle' | 'connecting' | 'streaming' | 'error'>('idle');
     const [messages, setMessages] = useState<TranscriptMessage[]>([]);
-    const [sessionId, setSessionId] = useState<string | null>(null);
+    const [sessionId] = useState<string | null>(null);
     
     // We use refs to handle live streaming chunks without causing excessive re-renders
     const currentMessageRef = useRef<string>('');

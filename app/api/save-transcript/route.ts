@@ -54,8 +54,8 @@ ${formattedTranscript}
 
             await fs.writeFile(filePath, fileContent, 'utf-8');
             console.log(`[Transcript Saved] -> ${filePath}`);
-        } catch (fsError: any) {
-            console.warn('[Transcript] ⚠️ Running in Vercel Serverless. Bypassing local filesystem write and proceeding with in-memory transcript.', fsError.message);
+        } catch (fsError) {
+            console.warn('[Transcript] ⚠️ Running in Vercel Serverless. Bypassing local filesystem write and proceeding with in-memory transcript.', fsError instanceof Error ? fsError.message : String(fsError));
         }
 
         // ==========================================

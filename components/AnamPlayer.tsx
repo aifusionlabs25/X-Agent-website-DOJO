@@ -8,7 +8,7 @@ interface AnamPlayerProps {
 
 export default function AnamPlayer({ personaId, onClose }: AnamPlayerProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [client, setClient] = useState<AnamClient | null>(null);
+    const [, setClient] = useState<AnamClient | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [isConnecting, setIsConnecting] = useState(true);
 
@@ -115,8 +115,9 @@ export default function AnamPlayer({ personaId, onClose }: AnamPlayerProps) {
                 // Currently, `removeAllListeners` doesn't exist on `AnamClient` according to typings.
                 // We rely on stopStreaming to clean up resources.
             }
-            if (videoRef.current) {
-                videoRef.current.srcObject = null;
+            const currentVideo = videoRef.current;
+            if (currentVideo) {
+                currentVideo.srcObject = null;
             }
         };
     }, [personaId, onClose]);

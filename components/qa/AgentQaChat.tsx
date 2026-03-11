@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAnamQaSession } from '@/hooks/useAnamQaSession';
 import TranscriptPanel from './TranscriptPanel';
 import { Send, Square, RefreshCcw, Hand } from 'lucide-react';
@@ -32,8 +32,7 @@ export default function AgentQaChat({ personaId, agentName }: AgentQaChatProps) 
         return () => {
             disconnect();
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [personaId]);
+    }, [personaId, connectionState, connect, disconnect]);
 
     const handleSend = async () => {
         if (!inputValue.trim() || connectionState !== 'streaming' || isSending) return;

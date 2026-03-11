@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Info, Square, ArrowRight } from 'lucide-react';
+import { Play, Square, ArrowRight } from 'lucide-react';
 import GhostlyBackground from './GhostlyBackground';
 import AnamPlayer from '../AnamPlayer';
 
