@@ -4,15 +4,19 @@ import { notFound, useRouter } from 'next/navigation';
 import { use } from 'react';
 import { ALL_AGENTS } from '@/lib/agents';
 import AnamPlayer from '@/components/AnamPlayer';
+import AgentQaChat from '@/components/qa/AgentQaChat';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 interface Props {
     params: Promise<{ slug: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function DemoPage({ params }: Props) {
+export default function DemoPage({ params, searchParams }: Props) {
     const { slug } = use(params);
+    const resolvedSearchParams = use(searchParams);
+    const isQaMode = resolvedSearchParams.qa === '1';
     const router = useRouter();
 
     const agent = ALL_AGENTS.find((a) => a.slug === slug);
@@ -32,9 +36,13 @@ export default function DemoPage({ params }: Props) {
             </div>
 
             {/* The Anam Player takes over the screen */}
-            <div className="w-full h-full relative">
+            <div className={`w-full h-full relative ${isQaMode ? 'z-30' : ''}`}>
                 {agent.personaId ? (
-                    <AnamPlayer personaId={agent.personaId} onClose={() => router.push(`/agents/${agent.slug}`)} />
+                    isQaMode ? (
+                        <AgentQaChat personaId={agent.personaId} agentName={agent.name} />
+                    ) : (
+                        <AnamPlayer personaId={agent.personaId} onClose={() => router.push(`/agents/${agent.slug}`)} />
+                    )
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                         <p className="text-red-400 font-bold">Neural Link Config Missing for {agent.name}</p>
