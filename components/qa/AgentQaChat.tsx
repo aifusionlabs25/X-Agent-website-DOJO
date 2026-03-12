@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useAnamQaSession } from '@/hooks/useAnamQaSession';
 import TranscriptPanel from './TranscriptPanel';
 import { Send, Square, RefreshCcw, Hand } from 'lucide-react';
@@ -24,15 +24,19 @@ export default function AgentQaChat({ personaId, agentName }: AgentQaChatProps) 
         clearMessages
     } = useAnamQaSession({ personaId });
 
+    const hasAttemptedConnect = useRef(false);
+
     // Connect automatically on mount in QA mode
     useEffect(() => {
-        if (connectionState === 'idle') {
+        if (!hasAttemptedConnect.current && connectionState === 'idle') {
+            hasAttemptedConnect.current = true;
             connect('qa-persona-video');
         }
         return () => {
             disconnect();
         };
-    }, [personaId, connectionState, connect, disconnect]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [personaId]);
 
     const handleSend = async () => {
         if (!inputValue.trim() || connectionState !== 'streaming' || isSending) return;
